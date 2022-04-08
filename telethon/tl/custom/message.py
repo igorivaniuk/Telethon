@@ -198,7 +198,10 @@ class Message(ChatGetter, SenderGetter, TLObject):
             replies: Optional[types.TypeMessageReplies] = None,
 
             # For MessageAction (mandatory)
-            action: Optional[types.TypeMessageAction] = None
+            action: Optional[types.TypeMessageAction] = None,
+
+            noforwards: Optional[bool] = None,
+            reactions: Optional['TypeMessageReactions'] = None
     ):
         # Common properties to messages, then to service (in the order they're defined in the `.tl`)
         self.out = bool(out)
@@ -230,6 +233,8 @@ class Message(ChatGetter, SenderGetter, TLObject):
         self.restriction_reason = restriction_reason
         self.ttl_period = ttl_period
         self.action = action
+        self.noforwards = noforwards
+        self.reactions = reactions
 
         # Convenient storage for custom functions
         # TODO This is becoming a bit of bloat
