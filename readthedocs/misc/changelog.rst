@@ -13,6 +13,91 @@ it can take advantage of new goodies!
 
 .. contents:: List of All Versions
 
+New layer (v1.38)
+=================
+
++------------------------+
+| Scheme layer used: 193 |
++------------------------+
+
+`View new and changed raw API methods <https://diff.telethon.dev/?from=188&to=193>`__.
+
+Bug fixes
+~~~~~~~~~
+
+* Formatting entities misbehaved with albums.
+* Sending a Message object with a file did not use the new file.
+
+
+New layer (v1.37)
+=================
+
++------------------------+
+| Scheme layer used: 188 |
++------------------------+
+
+`View new and changed raw API methods <https://diff.telethon.dev/?from=181&to=188>`__.
+
+Additions
+~~~~~~~~~
+
+* Support for CDN downloads should be back. Telethon still prefers no CDN by default.
+
+Enhancements
+~~~~~~~~~~~~
+
+* ``FloodWaitPremium`` should now be handled like any other floodwaits.
+
+Bug fixes
+~~~~~~~~~
+
+* Fixed edge-case when using ``get_messages(..., reverse=True)``.
+* ``ConnectionError`` when using proxies should be raised properly.
+
+
+New layer (v1.36)
+=================
+
++------------------------+
+| Scheme layer used: 181 |
++------------------------+
+
+`View new and changed raw API methods <https://diff.telethon.dev/?from=178&to=181>`__.
+
+Bug fixes
+~~~~~~~~~
+
+* Certain updates, such as :tl:`UpdateBotStopped`, should now be processed reliably.
+
+
+New layer (v1.35)
+=================
+
++------------------------+
+| Scheme layer used: 178 |
++------------------------+
+
+`View new and changed raw API methods <https://diff.telethon.dev/?from=173&to=178>`__.
+
+Additions
+~~~~~~~~~
+
+* ``drop_author`` parameter now exposed in ``forward_messages``.
+
+Enhancements
+~~~~~~~~~~~~
+
+* "Custom secret support" should work with ``TcpMTProxy``.
+* Some type hints should now be more accurate.
+
+Bug fixes
+~~~~~~~~~
+
+* Session path couldn't be a ``pathlib.Path`` or ``None``.
+* Python versions older than 3.9 should now be supported again.
+* Readthedocs should hopefully build the v1 documentation again.
+
+
 New layer (v1.34)
 =================
 
@@ -23,7 +108,7 @@ New layer (v1.34)
 `View new and changed raw API methods <https://diff.telethon.dev/?from=167&to=173>`__.
 
 Additions
-~~~~~~~~~~~~
+~~~~~~~~~
 
 * ``reply_to_chat`` and ``reply_to_sender`` are now in ``Message``.
   This is useful when you lack access to the chat, but Telegram still included some basic information.
